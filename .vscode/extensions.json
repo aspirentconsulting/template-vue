@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin",
+    "orta.vscode-jest",
+    "pkief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "cschleiden.vscode-github-actions"
+  ]
+}
