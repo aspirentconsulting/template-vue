@@ -6,7 +6,9 @@ describe("App", () => {
   it("renders header correctly", () => {
     render(App);
 
-    expect(screen.getByText(/acme sprocket co/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /acme sprocket co/i })
+    ).toBeInTheDocument();
   });
 
   it("counter increments correctly", async () => {
