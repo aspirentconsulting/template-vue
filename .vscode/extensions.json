@@ -5,6 +5,7 @@
     "pkief.material-icon-theme",
     "zixuanchen.vitest-explorer",
     "esbenp.prettier-vscode",
-    "github.vscode-github-actions"
+    "github.vscode-github-actions",
+    "dbaeumer.vscode-eslint"
   ]
 }

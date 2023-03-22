@@ -24,5 +24,8 @@ jobs:
       - name: Restore Dependencies
         run: npm ci
 
+      - name: Lint Application
+        run: npm run lint
+
       - name: Run Unit Tests
         run: npm run test:unit

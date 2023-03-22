@@ -11,7 +11,7 @@
     "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' :4173 'cypress open --e2e'",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "lint": "eslint . --ext .vue,.ts, --fix --max-warnings 0"
+    "lint": "npx eslint ./src --fix --max-warnings 0"
   },
   "dependencies": {
     "pinia": "^2.0.28",
@@ -19,7 +19,6 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^14.4.3",
     "@testing-library/vue": "^6.6.1",
