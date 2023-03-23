@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import useDataFetch from "@/common/hooks/UseDataFetch";
+import useDataFetch from "@/common/hooks/use-data-fetch/UseDataFetchch/UseDataFetch";
 import apiClient from "@/data/ApiClient";
 import { defaultGreeting } from "./DefaultGreeting";
 import GreetUser from "./GreetUser.vue";

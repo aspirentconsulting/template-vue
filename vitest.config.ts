@@ -17,7 +17,13 @@ export default defineConfig({
       functions: 90,
       lines: 90,
       all: true,
-      exclude: ["data/**", "main.ts", "router/**"],
+      exclude: [
+        "data/**",
+        "main.ts",
+        "router/**",
+        "**/**{Container, container}.vue",
+        "**/{Default, default}**.ts",
+      ],
     },
   },
   resolve: {

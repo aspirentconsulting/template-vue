@@ -28,6 +28,7 @@
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitest/coverage-istanbul": "^0.29.7",
+    "@vitest/ui": "^0.29.7",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/test-utils": "^2.2.6",
     "@vue/tsconfig": "^0.1.3",

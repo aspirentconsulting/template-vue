@@ -4,17 +4,18 @@ import { onMounted, ref, type Ref } from "vue";
 export default function useDataFetch<T>(
   defaultResponse: T,
   callback: () => Promise<AxiosResponse<T>>
-): Ref<T> {
+): [Ref<T>, Ref<string>] {
   const data = ref<T>(defaultResponse) as Ref<T>;
+  const errorMessage = ref<string>("");
 
   onMounted(() => {
     callback()
       .then((response) => (data.value = response.data))
-      .catch((error) => {
+      .catch((error: string) => {
         // TODO: Will update later.
-        console.log(error);
+        errorMessage.value = error;
       });
   });
 
-  return data;
+  return [data, errorMessage];
 }
