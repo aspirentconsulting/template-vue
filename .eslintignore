@@ -1,1 +1,2 @@
 src/shims-vue.d.ts
+vitest.config.ts

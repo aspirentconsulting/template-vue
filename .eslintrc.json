@@ -5,11 +5,14 @@
     "parser": "@typescript-eslint/parser",
     "sourceType": "module",
     "ecmaVersion": "latest",
-    "project": ["./tsconfig.json", "./tsconfig.vitest.json"]
+    "project": [
+      "./tsconfig.json",
+      "./tsconfig.vitest.json",
+      "./tsconfig.app.json"
+    ]
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
@@ -17,6 +20,9 @@
     "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended"
   ],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": 2
+  },
   "overrides": [
     {
       "files": ["cypress/e2e/**/*.{cy,spec}.{js,ts,jsx,tsx}"],

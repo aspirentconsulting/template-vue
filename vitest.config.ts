@@ -8,6 +8,7 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     setupFiles: "setupTests.ts",
+    root: "src/",
     coverage: {
       provider: "istanbul",
       enabled: true,
@@ -15,6 +16,8 @@ export default defineConfig({
       statements: 90,
       functions: 90,
       lines: 90,
+      all: true,
+      exclude: ["data/**", "main.ts", "router/**"],
     },
   },
   resolve: {
