@@ -9,8 +9,57 @@
  * ---------------------------------------------------------------
  */
 
+export interface BadRequestResult {
+  /** @format int32 */
+  statusCode?: number;
+}
+
 export interface Greeting {
   name?: string | null;
+}
+
+export interface InsertSprocketRequest {
+  /** @minLength 1 */
+  name: string;
+  /** @format int32 */
+  pitchDiameterInches?: number;
+  /** @format int32 */
+  outsideDiameterInches?: number;
+  /** @format int32 */
+  pitchInches?: number;
+}
+
+export interface SprocketResponse {
+  /** @format uuid */
+  id: string;
+  deleted: boolean;
+  /** @minLength 1 */
+  name: string;
+  /** @format int32 */
+  pitchDiameterInches?: number;
+  /** @format int32 */
+  outsideDiameterInches?: number;
+  /** @format int32 */
+  pitchInches?: number;
+}
+
+export interface SprocketResponsePageResponse {
+  responses: SprocketResponse[];
+  /** @format int32 */
+  totalCount: number;
+}
+
+export interface UpdateSprocketRequest {
+  /** @format uuid */
+  id?: string;
+  /** @minLength 1 */
+  name: string;
+  /** @format int32 */
+  pitchDiameterInches?: number;
+  /** @format int32 */
+  outsideDiameterInches?: number;
+  /** @format int32 */
+  pitchInches?: number;
 }
 
 export interface User {
@@ -251,6 +300,101 @@ export class Api<
         method: "POST",
         body: data,
         type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+  };
+  api = {
+    /**
+     * No description
+     *
+     * @tags Sprocket
+     * @name InsertSprocket
+     * @request POST:/api/Sprocket
+     */
+    insertSprocket: (data: InsertSprocketRequest, params: RequestParams = {}) =>
+      this.request<SprocketResponse, BadRequestResult>({
+        path: `/api/Sprocket`,
+        method: "POST",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sprocket
+     * @name UpdateSprocket
+     * @request PUT:/api/Sprocket
+     */
+    updateSprocket: (data: UpdateSprocketRequest, params: RequestParams = {}) =>
+      this.request<SprocketResponse, BadRequestResult>({
+        path: `/api/Sprocket`,
+        method: "PUT",
+        body: data,
+        type: ContentType.Json,
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sprocket
+     * @name DeleteSprocket
+     * @request DELETE:/api/Sprocket/{id}
+     */
+    deleteSprocket: (id: string, params: RequestParams = {}) =>
+      this.request<SprocketResponse, BadRequestResult>({
+        path: `/api/Sprocket/${id}`,
+        method: "DELETE",
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sprocket
+     * @name FindSprocketById
+     * @request GET:/api/Sprocket/{id}
+     */
+    findSprocketById: (id: string, params: RequestParams = {}) =>
+      this.request<SprocketResponse, BadRequestResult>({
+        path: `/api/Sprocket/${id}`,
+        method: "GET",
+        format: "json",
+        ...params,
+      }),
+
+    /**
+     * No description
+     *
+     * @tags Sprocket
+     * @name FindAllSprockets
+     * @request GET:/api/Sprocket/paginated
+     */
+    findAllSprockets: (
+      query?: {
+        /**
+         * @format int32
+         * @default 0
+         */
+        page?: number;
+        /**
+         * @format int32
+         * @default 10
+         */
+        pageSize?: number;
+      },
+      params: RequestParams = {}
+    ) =>
+      this.request<SprocketResponsePageResponse, any>({
+        path: `/api/Sprocket/paginated`,
+        method: "GET",
+        query: query,
         format: "json",
         ...params,
       }),

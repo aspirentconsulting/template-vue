@@ -1,4 +1,4 @@
-import GreetUser from "@/features/login/greet-user/GreetUser.vue";
+import FindAllSprocketsContainer from "@/features/sprockets/find-all/FindAllSprocketsContainer.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      component: GreetUser,
+      component: FindAllSprocketsContainer,
     },
   ],
 });
