@@ -8,6 +8,9 @@
     "github.vscode-github-actions",
     "dbaeumer.vscode-eslint",
     "aaron-bond.better-comments",
-    "eamodio.gitlens"
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker",
+    "editorconfig.editorconfig",
+    "ms-azuretools.vscode-azureappservice"
   ]
 }

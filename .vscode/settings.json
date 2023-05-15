@@ -3,5 +3,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.guides.bracketPairs": "active",
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "files.autoSaveDelay": 5000
 }

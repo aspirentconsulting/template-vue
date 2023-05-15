@@ -8,6 +8,7 @@ on:
 
 env:
   NODE_VERSION: "18.x"
+  AZURE_WEBAPP_NAME: "aspirent-vue-template"
 
 jobs:
   build:
@@ -32,3 +33,11 @@ jobs:
 
       - name: Build Application
         run: npm run build
+
+      # - name: Deploy Application
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     images: ""
+      #     app-name: ${{ env.AZURE_WEBAPP_NAME }}
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     package: ./dist
