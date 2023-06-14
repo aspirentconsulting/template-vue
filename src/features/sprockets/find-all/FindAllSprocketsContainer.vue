@@ -6,7 +6,7 @@
 import useDataFetch from "@/common/hooks/use-data-fetch/UseDataFetch";
 import FindAllSprockets from "./FindAllSprockets.vue";
 import apiClient from "@/data/ApiClient";
-import defaultFindAllSprocketsResponse from "./DefaultFindAllSprocketsResponse";
+import { defaultFindAllSprocketsResponse } from "./DefaultFindAllSprocketsResponse";
 import { ref } from "vue";
 
 const page = ref<number>(0);
