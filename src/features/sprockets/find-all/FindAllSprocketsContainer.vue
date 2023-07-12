@@ -4,8 +4,8 @@
 
 <script setup lang="ts">
 import useDataFetch from "@/common/hooks/use-data-fetch/UseDataFetch";
-import FindAllSprockets from "./FindAllSprockets.vue";
 import apiClient from "@/data/ApiClient";
+import FindAllSprockets from "./FindAllSprockets.vue";
 import { defaultFindAllSprocketsResponse } from "./DefaultFindAllSprocketsResponse";
 import { ref } from "vue";
 
